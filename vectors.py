@@ -7,6 +7,7 @@ from maxim import maxim
 from ordenar import ordenat
 from ordenar import ordenar
 from suma import suma
+from suma_vectors import suma_vectors
 
 
 
@@ -24,7 +25,8 @@ def menu():
         print("    3. Ordenar els vectors?\n")
         print("    4. Està ordenat?\n")
         print("    5. Calcul de la suma dels elements d'un vector\n")
-        print("    6. Sortir\n")
+        print("    6. Sumar dos vectors\n")
+        print("    7. Sortir\n")
         print("\n")
         print("Entreu la vostra opcion:")
         o = int(input())
@@ -33,24 +35,26 @@ def menu():
 def vectors():
         capcalera()
         opcio = menu()
-        while opcio != 6:
-                vector = llegir_vector()
+        while opcio != 7:
                 if opcio == 2:
-                        m = maxim(vector)
-                        print("El maxim es " + str(m))
-                elif opcio == 5: 
-                        s = suma(vector)
-                        print("La suma es " + str(s))
-                elif opcio == 1: 
-                        c = capicua(vector)
-                        print((c)+ " Es capicua")           
-                elif opcio == 3: 
-                        o = ordenat(vector)
-                        print((o) + " està ordenat")
-                elif opcio == 4: 
-                        ord = ordenar(vector)
-                        print("Vectors en orden " + str(ord))
-
+                    vector = llegir_vector()
+                    r = maxim(vector)
+                elif opcio == 5:
+                    vector = llegir_vector()
+                    r = suma(vector)        
+                elif opcio == 1:
+                    vector = llegir_vector()
+                    r = capicua(vector)
+                elif opcio == 3:
+                    vector = llegir_vector()
+                    r = ordenat(vector)
+                elif opcio == 4:
+                    vector = llegir_vector()
+                    r = ordenar(vector)
+                elif opcio == 6:
+                    vector = llegir_vector()
+                    r = suma_vectors()
+                print(r)
                 opcio = menu()
         print("adeu")
 

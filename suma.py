@@ -5,3 +5,5 @@ def suma(v):
 	for i in range(n):
 		s = s + v[i]
 	return s
+
+
