@@ -30,10 +30,10 @@ def pinta_dau(n, numero):
         d[n-1][n-1] = "o"
     
     if numero == 4:
-        d[0][1] = "o"
-        d[0][n-2] = "o"
-        d[n-1][1] = "o"
-        d[n-1][n-2] = "o"
+        d[0][0] = "o"
+        d[0][n-1] = "o"
+        d[n-1][0] = "o"
+        d[n-1][n-1] = "o"
 
 
     if numero == 5:
@@ -60,7 +60,6 @@ def escriu_dau(d):
 def tirar_dau():
     numero = random.randint(1,6)
     dau = pinta_dau(3,numero)
-    print (numero)
     escriu_dau(dau)
     return numero
     
