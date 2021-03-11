@@ -3,7 +3,7 @@ from dau import tirar_dau
 def entra_noms(n):
     names = []
     for i in range(n):
-        noms=input("Entra el nom del jugador numero " + str(i+1) + ":" )
+        noms=input("Entra el nom del jugador numero " + str(i+1) + ": " )
         names.append(noms)
 
     return names
@@ -11,7 +11,7 @@ def entra_noms(n):
 def entra_colors(n):
     cols = []
     for i in range(n):
-        colors=input("El color del jugador numero " + str(i+1) + ":" )
+        colors=input("El color del jugador numero " + str(i+1) + ": " )
         cols.append(colors)
 
     return cols
@@ -48,9 +48,12 @@ def parchis():
      noms = entra_noms(n)
      colors = entra_colors(n)
 
+     posicions_inicials = [5,22,39,63]
+     seguro=[5,12,17,22,29,34,39,46,51,56,63,68]
+
      posicions = []
      for i in range(n):
-         posicions.append(0)
+         posicions.append(posicions_inicials)
     
      torn = 0
 
