@@ -37,6 +37,7 @@ def pinta_dau(n,numero):
         d[n-1][n-1] = "o"
  
     if numero == 4:
+<<<<<<< HEAD
         d[0][0] = "o"        
         d[n-1][0] = "o"
         d[0][n-1] = "o"        
@@ -44,6 +45,16 @@ def pinta_dau(n,numero):
  
     if numero == 5:    
         d[0][0] = "o"
+=======
+        d[0][0] = "o"
+        d[0][n-1] = "o"
+        d[n-1][0] = "o"
+        d[n-1][n-1] = "o"
+
+
+    if numero == 5:
+        d[0][0] = "o" 
+>>>>>>> 7b93c5715e089d316b4305719018bc00ca30f6c4
         d[0][n-1] = "o"
         d[n//2][n//2] = "o"
         d[n-1][0] = "o"
@@ -70,5 +81,9 @@ def escriu_dau(d):
 def tirar_dau():
     numero = randint(1,6)
     dau = pinta_dau(3,numero)
+<<<<<<< HEAD
     escriu_dau(dau)        
+=======
+    escriu_dau(dau)
+>>>>>>> 7b93c5715e089d316b4305719018bc00ca30f6c4
     return numero
