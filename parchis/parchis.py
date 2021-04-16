@@ -54,11 +54,11 @@ def seguent_jugada(posicions,torn,noms,colors,ha_passat_la_casella_68):
         print("i ja has passat la casella 68")
     else:
         print("però encara no has passat la casella 68")
- 
-    print("Prem return per tirar el dau")
 
-        if posicions[i] == 75:
-            return True
+    print("Prem return per tirar el dau")
+    
+    if posicions[i] == 75:
+        return True
     return False
 
 def seguent_jugada(posicions, torn, noms, colors):
