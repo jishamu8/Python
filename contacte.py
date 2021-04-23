@@ -22,4 +22,15 @@ class Contacte:
         f.write(self.mail + "\n")
         f.close
 
-#    def guardar(self, fitxer):
+    def carregar(self, fitxer):
+        aux = fitxer.readline().replace("\n","")
+        print ("aux = " + aux)
+        if len(aux) > 0 :
+            self.nom = aux
+            self.cognoms = fitxer.readline().replace("\n","")
+            self.mobil = fitxer.readline().replace("\n","")
+            self.mail = fitxer.readline().replace("\n","")
+        
+
+            return True
+        return False

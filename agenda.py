@@ -7,8 +7,9 @@ def menu():
         print("    3. Esborrar contacte\n")
         print("    4. Llistar contactes\n")
         print("    5. Guardar contactes\n")
-        print("    6. Cargar contactes\n")
-        print("    7. Sortir\n")
+        print("    6. Carregar contactes\n")
+        print("    7. Ordenar contactes\n")
+        print("    8. Sortir\n")
         print("\n")
         print("Entreu la vostra opcion:",end="")
         o = int(input())
@@ -62,18 +63,42 @@ def esborrar():
 
 def guardar():
     n = len(agenda)
+    f = open("contactes.txt", "w")
+    f.close()
     for i in range(n):
         c = agenda[i]
         c.guardar()
 
-#def carregar()
+def carregar():
+    f = open("contactes.txt", "r")
+    c = Contacte("","","")
+    i = 0
+
+    while c.carregar(f):
+        agenda.append(c)
+        c = Contacte("","","")
+        i = i + 1
+    print("S'han carregat " + str(i)+ " contactes")
 
 
+def ordenar(v):
+    n = len(v)
+    for i in range(n):
+            for j in range(n):
+                    if i<j:
+#                         si i<j es cierto quiere ecir que el elemento v[i]
+#                         es anterior a v[j] -> si además v[i] > v[j]
+                            if v[i] > v[j]:
+                                    aux = v[i]
+                                    v[i] = v[j]
+                                    v[j] = aux
+    return v
 
 def main():
+    carregar()
     presenta()
     o = menu()
-    while o !=7:
+    while o !=8:
         if o == 1:
             alta()
         
@@ -92,9 +117,14 @@ def main():
         if o == 6:
            carregar()
         
+        if o == 7:
+           print(ordenar([3,4,5,1]))
+        
         o = menu()
     
-
+    r = input("Vols salvar els nous contactes? [def. Si]")
+    if  len(r) == 0 or r[0] == "s" or  r[0] == "S":
+        guardar()
     print("Adeu")
 
 main()
